@@ -1,0 +1,123 @@
+\documentclass[12pt,letter,draft]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{natbib}
+%Added to remove newline and noindent
+
+
+
+% Changed to standard margins
+\usepackage{fullpage}
+
+% Load ToDoNotes
+
+\usepackage{setspace}
+
+
+\begin{document}
+
+\clearpage
+\thispagestyle{empty}
+
+\noindent \textbf {The Hydra Problem: An Agent-Based approach to Drone Strikes and Terrorism}
+\noindent Ethan Spangler, PhD Candidate Washington State University\\
+\begin{spacing}{1.5}
+
+% Submissions for Selected Presentations must include a two-page, single-spaced abstract that provides a clear explanation of what will be presented at the Joint Annual Meeting. Authors should include in this abstract a discussion of the relevance of the topic, research methodology, and potential for generating discussion during the meeting. Please do not include your name or contact information in the abstract file. Please do not submit abstract titles in all caps.
+
+The US has been engaged in the global War on Terror since the terrorist attacks of September 11, 2001. The weapon of choice in this conflict are unmanned aerial vehicles, better known as drones. Drones have been used extensively in the strategy known as targeted killings, wherein terrorists are eliminated with precision strikes. The idea is that terrorist groups will be unable to replace personnel faster than they can be eliminated, resulting in the death of the organization (Cullen 2007). Such strikes have been used in Afghanistan, Iraq, Pakistan, Somalia, and Yemen. However, despite over a decade of use, the analytics of drone strikes have yet to be fully explored. 
+
+The use of drones is a hotly contested issue. The bulk of the debate concerns the morality and legality of drones and targeted killing, though a few have taken to discussing the strategic efficiency. Bymen (2006, 2013) and Cullen (2007) each argue that the drone program is effective in quelling terrorist activity in a way that minimizes risk to US personnel, is fiscally sound, and produces less civilian casualties than alternative methods. Empirical evidence by Jaeger and Passerman (2009) shows that drones strikes can be effective in suppressing terrorist activities. Conversely, Cronin (2013) points out that many terrorist groups, such as al Qaeda, have become quite adroit at using drone strikes to their benefit. The terrorists present those eliminated as martyrs and inflate civilian casualties, the end results being that each drone strike may actually bolster terrorist ranks as new initiates are lured to the cause by terrorist propaganda (Cronin 2013). As with all things, the truth lies within the details and it is the goal of this paper to find the conditions under which the US can feasibly eliminate a terrorist organization through drone strikes. 
+
+This paper fills a gap in the literature by building an agent-based model of the interplay between drones, civilians, and terrorists. The limited data available on the subject makes the use of agent-based modeling relevant. Parameters values in the simulation are based in part on data obtained from the Bureau of Investigative Journalism who have maintained a database of all drones strikes in Pakistani Tribal areas from 2004 to 2013. 
+
+The model is based on a the Predator-Prey model by Wilensky (1997) with three agent types: drones, civilians, and terrorists. The civilian and terrorists population are in conflict with one another. While the civilians substantially outnumber the terrorists, they are less effective at fighting terrorists. The drones are tasked with hunting terrorists and are quite effective at destroying them when found. However, there is a small probability that a drone may kill a civilian by mistake causing collateral damage. When a civilian is killed by a drone, it creates $r\sim N(\mu,\sigma)$ random number of terrorists   
+
+ %while informed of the facts presented by the above scholars. In the model, the US faces resource limitations and can only launch a limited number of drone strikes each period with a probability of missing its target. For each drone strike a number of raw recruits are generated which must spend time being trained to become terrorists. Only an existing terrorist can train raw recruits. Different scenarios will be tested that adjust the cost of drone strikes, initial terrorist population, recruitment rate, training period, and other situations to better understand what conditions best facilitate the elimination of a terrorist organization through the used of drone strikes. 
+ 
+ %Signature drone strikes-Strikes based on behavior but not proven identity 
+
+Iterations of the simulations reveals the conditions and dynamics necessary for a terrorist group to be eliminated through the use of drone strikes. This research is highly relevant given the protracted and widespread nature of the War on Terror. Through better understanding of the analytics of drone strikes a robust counterterrorism strategy can be employed by policymakers. 
+
+%Notes from WEAI
+
+%terrorist/population ratio, finding the tipping point  of the ratio 
+
+%What if the Pakistanis worked the drones 
+
+%exploratory analys0 low resolution model and high resolution model 
+
+%Evolutionary Game Theory, look into it.  
+
+%Not going to get more data 
+
+%Policy suggestion- figure out what is the most important unknown in Drone Strikes 
+
+%build the historical context of past aerial asymetric attacks. 
+
+
+
+%Point- this model could be adopted to fit any ariel campaign involving potential civilian casualties. Example: Allied bombing of Japan and Germany. The increased civilian casualties actually increase peoples resolve to fight. 
+
+
+Plot of Pakistan-Taliban terrorist linked attacks over time. Plotted with Drone strike.
+
+Can't seem to find an extensive list of attacks by the Pakistani-Taliban. Might have to scrap from the internet. 
+
+\section{Model}
+
+\begin{itemize}
+\item Civilians
+	\begin{itemize}
+	\item Large population, grows at some rate 
+	\item Hunts Terrorists, kills them upon encounter with probability $q$. 
+	\end{itemize}
+\item Terrorists 
+	\begin{itemize}
+	\item Small population, grows at some rate 
+	\item Hunts Civilians, kills them upon encounter with probability $p$, with $p>q$.  
+	\end{itemize}
+\item Drones
+	\begin{itemize}
+	\item Very small population, fixed 
+	\item Hunts Terrorists, kills them upon encounter with probability $P$.
+	\item Misidentifies Civilians as Terrorists, kills them upon encounter with probability $Q$, with $P>Q$. 
+	\item Blast Radius, upon successful kill (either terrorist of civilian), any other agents (excluding other drones) within $r$ distance are also killed.  
+	\item For every Civilian killed by Drones, a random number of $t$ new terrorists will be created.
+	\end{itemize}
+\end{itemize}
+
+External:
+Track the costs
+-Each strike
+-hours of operation(basically every time the Drone moves to a new square, that counts as an hour) . 
+
+
+
+
+%"Fighting terrorism: are military measures effective? Empirical evidence from Turkey" by Feridun and Shahbaz. I need to read this paper!
+
+
+%Plot Drone Strikes and terrorist attacks (by Pakistani Taliban) over time. 
+
+%include a cost counter for how much each missile strike costs. 
+
+
+\end{spacing}
+
+\pagebreak
+
+\bibliographystyle{chicago}
+\bibliography{drone}
+\nocite{*}
+
+\end{document}
+
+ 
+
+
